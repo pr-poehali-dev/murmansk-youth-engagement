@@ -91,7 +91,7 @@ const Index = () => {
         </section>
 
         <section className="container mx-auto px-4 py-8">
-          <Card className="bg-gradient-to-r from-primary/10 to-blue-50 border-primary/20">
+          <Card className="bg-gradient-to-r from-primary/10 to-blue-50 border-transparent">
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
