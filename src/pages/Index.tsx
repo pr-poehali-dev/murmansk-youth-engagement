@@ -86,9 +86,7 @@ const Index = () => {
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
               Всё для молодежи в одном месте
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Информация о льготах, культурных мероприятиях, спортивных секциях и преимуществах Единой карты жителя
-            </p>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Информация о льготах, культурных мероприятиях, спортивных секциях, культурных мероприятиях, образовательных программ и преимуществах Единой карты жителя</p>
           </div>
         </section>
 
