@@ -81,12 +81,20 @@ const Index = () => {
       </header>
 
       <main>
-        <section className="container mx-auto px-4 py-16 md:py-24">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-              Всё для молодежи в одном месте
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Информация о льготах, культурных мероприятиях, спортивных секциях, культурных мероприятиях, образовательных программ и преимуществах Единой карты жителя</p>
+        <section className="container mx-auto px-4 py-8 md:py-12">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-300 via-cyan-400 via-blue-500 to-purple-600 p-12 md:p-20">
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
+            <div className="relative z-10 max-w-3xl mx-auto text-center space-y-6">
+              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                Карта жителя<br />Мурманской области
+              </h2>
+              <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto">
+                Единая карта для получения льгот, бонусов и услуг
+              </p>
+              <Button size="lg" variant="secondary" className="bg-white hover:bg-gray-50 text-primary">
+                Получить карту
+              </Button>
+            </div>
           </div>
         </section>
 
