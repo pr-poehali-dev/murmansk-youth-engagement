@@ -89,10 +89,6 @@ const Index = () => {
               Информация о льготах, культурных мероприятиях, спортивных секциях и преимуществах Единой карты жителя
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
-              <Button size="lg" className="gap-2">
-                <Icon name="CreditCard" size={20} />
-                Получить карту
-              </Button>
               <Button size="lg" variant="outline" className="gap-2">
                 <Icon name="Search" size={20} />
                 Найти мероприятие
