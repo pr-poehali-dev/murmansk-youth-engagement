@@ -82,7 +82,6 @@ const Index = () => {
       <main>
         <section className="container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <Badge variant="secondary" className="text-primary border-primary/20"></Badge>
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
               Всё для молодежи в одном месте
             </h2>
