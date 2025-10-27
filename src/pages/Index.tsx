@@ -50,32 +50,39 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="bg-primary rounded-lg p-2">
-              <Icon name="MapPin" className="text-white" size={24} />
-            </div>
+            <img 
+              src="https://cdn.poehali.dev/files/c11ec030-53cc-4e56-a403-440121d9ae49.jpg" 
+              alt="Герб Мурманской области"
+              className="h-10 w-auto object-contain"
+            />
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Карта51</h1>
-              <p className="text-xs text-gray-600">Молодежный портал</p>
+              <h1 className="text-base font-normal text-primary leading-tight">Единая карта жителя</h1>
+              <p className="text-base font-normal text-primary leading-tight">Мурманской области</p>
             </div>
           </div>
-          <nav className="hidden md:flex gap-6">
-            <button onClick={() => setActiveSection("benefits")} className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
-              Льготы
+          <nav className="hidden lg:flex items-center gap-8">
+            <button onClick={() => setActiveSection("карта")} className="text-sm text-gray-700 hover:text-primary transition-colors">
+              О карте
             </button>
-            <button onClick={() => setActiveSection("culture")} className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
-              Культура
+            <button onClick={() => setActiveSection("карта")} className="text-sm text-gray-700 hover:text-primary transition-colors">
+              Как получить
             </button>
-            <button onClick={() => setActiveSection("sport")} className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
-              Спорт
+            <button onClick={() => setActiveSection(null)} className="text-sm text-gray-700 hover:text-primary transition-colors">
+              Акции и партнёры
             </button>
-            <button onClick={() => setActiveSection("card")} className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
-              Карта
+            <button onClick={() => setActiveSection(null)} className="text-sm text-gray-700 hover:text-primary transition-colors">
+              Частые вопросы
+            </button>
+            <button onClick={() => setActiveSection(null)} className="text-sm text-gray-700 hover:text-primary transition-colors">
+              Контакты
             </button>
           </nav>
-          <Button className="hidden md:flex">Войти</Button>
+          <Button variant="ghost" className="text-sm text-primary hover:text-primary/80">
+            Личный кабинет
+          </Button>
         </div>
       </header>
 
