@@ -42,6 +42,12 @@ const Index = () => {
     { icon: "Globe", title: "Доступность", description: "Работает по всей области" }
   ];
 
+  const новости = [
+    { title: "Открытие нового спортивного комплекса", description: "В марте откроется современный ФОК с бассейном и тренажерными залами", date: "27 октября 2025", category: "Спорт" },
+    { title: "Расширение программы молодежных грантов", description: "Увеличен размер грантов на образовательные проекты до 500 тысяч рублей", date: "25 октября 2025", category: "Льготы" },
+    { title: "Фестиваль Северного сияния 2025", description: "Программа фестиваля включает выставки, концерты и мастер-классы", date: "20 октября 2025", category: "Культура" }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
@@ -96,6 +102,41 @@ const Index = () => {
               </Button>
             </div>
           </div>
+        </section>
+
+        <section className="container mx-auto px-4 py-8">
+          <Card className="bg-gradient-to-r from-primary/10 to-blue-50 border-primary/20">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="bg-primary rounded-lg p-2">
+                    <Icon name="Newspaper" className="text-white" size={24} />
+                  </div>
+                  <CardTitle className="text-2xl">Новости</CardTitle>
+                </div>
+                <Button variant="ghost" size="sm" className="gap-2">
+                  Все новости
+                  <Icon name="ArrowRight" size={16} />
+                </Button>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {новости.map((новость, index) => (
+                  <Card key={index} className="bg-white hover:shadow-md transition-shadow">
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-2">
+                        <Badge variant="secondary">{новость.category}</Badge>
+                        <span className="text-xs text-gray-500">{новость.date}</span>
+                      </div>
+                      <CardTitle className="text-lg mb-2">{новость.title}</CardTitle>
+                      <CardDescription className="text-sm">{новость.description}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </section>
 
         <section id="benefits" className="container mx-auto px-4 py-16">
