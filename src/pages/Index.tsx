@@ -88,12 +88,6 @@ const Index = () => {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Информация о льготах, культурных мероприятиях, спортивных секциях и преимуществах Единой карты жителя
             </p>
-            <div className="flex gap-4 justify-center flex-wrap">
-              <Button size="lg" variant="outline" className="gap-2">
-                <Icon name="Search" size={20} />
-                Найти мероприятие
-              </Button>
-            </div>
           </div>
         </section>
 
