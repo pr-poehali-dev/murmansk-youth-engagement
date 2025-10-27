@@ -137,47 +137,64 @@ const Index = () => {
         </section>
 
         <section id="benefits" className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit, index) => (
-              <Card 
-                key={index}
-                className="hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105 border-2 hover:border-primary/50"
-                onClick={() => setActiveSection(benefit.title.toLowerCase())}
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <div className="flex items-center gap-2 mb-8 overflow-x-auto pb-2">
+              <Button 
+                variant={activeSection === null ? "default" : "ghost"}
+                onClick={() => setActiveSection(null)}
+                className="whitespace-nowrap"
               >
-                <CardHeader>
-                  <div className={`${benefit.color} w-12 h-12 rounded-lg flex items-center justify-center mb-4`}>
-                    <Icon name={benefit.icon as any} className="text-primary" size={24} />
-                  </div>
-                  <CardTitle className="flex items-center justify-between">
-                    {benefit.title}
-                    <Badge variant="secondary">{benefit.count}</Badge>
-                  </CardTitle>
-                  <CardDescription>{benefit.description}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
+                Все вопросы
+              </Button>
+              {benefits.map((benefit, index) => (
+                <Button
+                  key={index}
+                  variant={activeSection === benefit.title.toLowerCase() ? "default" : "ghost"}
+                  onClick={() => setActiveSection(benefit.title.toLowerCase())}
+                  className="whitespace-nowrap"
+                >
+                  {benefit.title}
+                </Button>
+              ))}
+            </div>
+            
+            {activeSection === null && (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {benefits.map((benefit, index) => (
+                  <Card 
+                    key={index}
+                    className="hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105 border-2 hover:border-primary/50 bg-white"
+                    onClick={() => setActiveSection(benefit.title.toLowerCase())}
+                  >
+                    <CardHeader>
+                      <div className={`${benefit.color} w-12 h-12 rounded-lg flex items-center justify-center mb-4`}>
+                        <Icon name={benefit.icon as any} className="text-primary" size={24} />
+                      </div>
+                      <CardTitle className="flex items-center justify-between">
+                        {benefit.title}
+                        <Badge variant="secondary">{benefit.count}</Badge>
+                      </CardTitle>
+                      <CardDescription>{benefit.description}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
         {activeSection === "льготы" && (
-          <section className="container mx-auto px-4 py-16 animate-fade-in">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex items-center justify-between mb-8">
-                <h3 className="text-3xl font-bold text-gray-900">Льготы и программы поддержки</h3>
-                <Button variant="ghost" onClick={() => setActiveSection(null)}>
-                  <Icon name="X" size={20} />
-                </Button>
-              </div>
+          <section className="container mx-auto px-4 pb-16 animate-fade-in">
+            <div className="bg-gray-50 rounded-2xl p-8">
               <div className="grid gap-4">
                 {льготы.map((льгота, index) => (
-                  <Card key={index} className="hover:shadow-md transition-shadow">
+                  <Card key={index} className="bg-white hover:shadow-md transition-shadow">
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <div className="space-y-2 flex-1">
                           <CardTitle className="text-xl">{льгота.title}</CardTitle>
                           <CardDescription className="text-base">{льгота.description}</CardDescription>
                         </div>
-                        <Icon name="ChevronRight" className="text-gray-400" size={20} />
                       </div>
                       <div className="flex gap-2 mt-4">
                         {льгота.tags.map((tag, i) => (
@@ -193,17 +210,11 @@ const Index = () => {
         )}
 
         {activeSection === "культура" && (
-          <section className="container mx-auto px-4 py-16 animate-fade-in">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex items-center justify-between mb-8">
-                <h3 className="text-3xl font-bold text-gray-900">Культурные мероприятия</h3>
-                <Button variant="ghost" onClick={() => setActiveSection(null)}>
-                  <Icon name="X" size={20} />
-                </Button>
-              </div>
+          <section className="container mx-auto px-4 pb-16 animate-fade-in">
+            <div className="bg-gray-50 rounded-2xl p-8">
               <div className="grid gap-4">
                 {культура.map((событие, index) => (
-                  <Card key={index} className="hover:shadow-md transition-shadow">
+                  <Card key={index} className="bg-white hover:shadow-md transition-shadow">
                     <CardHeader>
                       <div className="flex items-start gap-4">
                         <div className="bg-primary/10 rounded-lg p-3 flex flex-col items-center justify-center min-w-[60px]">
@@ -235,17 +246,11 @@ const Index = () => {
         )}
 
         {activeSection === "спорт" && (
-          <section className="container mx-auto px-4 py-16 animate-fade-in">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex items-center justify-between mb-8">
-                <h3 className="text-3xl font-bold text-gray-900">Спортивные секции</h3>
-                <Button variant="ghost" onClick={() => setActiveSection(null)}>
-                  <Icon name="X" size={20} />
-                </Button>
-              </div>
+          <section className="container mx-auto px-4 pb-16 animate-fade-in">
+            <div className="bg-gray-50 rounded-2xl p-8">
               <div className="grid gap-4">
                 {спорт.map((секция, index) => (
-                  <Card key={index} className="hover:shadow-md transition-shadow">
+                  <Card key={index} className="bg-white hover:shadow-md transition-shadow">
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <div className="space-y-3 flex-1">
@@ -278,15 +283,8 @@ const Index = () => {
         )}
 
         {activeSection === "карта" && (
-          <section className="container mx-auto px-4 py-16 animate-fade-in">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex items-center justify-between mb-8">
-                <h3 className="text-3xl font-bold text-gray-900">Единая карта жителя</h3>
-                <Button variant="ghost" onClick={() => setActiveSection(null)}>
-                  <Icon name="X" size={20} />
-                </Button>
-              </div>
-              
+          <section className="container mx-auto px-4 pb-16 animate-fade-in">
+            <div className="bg-gray-50 rounded-2xl p-8">
               <Card className="mb-8 bg-gradient-to-br from-primary to-blue-700 text-white border-0">
                 <CardHeader className="space-y-6">
                   <div className="flex items-start justify-between">
@@ -316,7 +314,7 @@ const Index = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 {cardFeatures.map((feature, index) => (
-                  <Card key={index}>
+                  <Card key={index} className="bg-white">
                     <CardHeader>
                       <div className="flex items-start gap-4">
                         <div className="bg-primary/10 rounded-lg p-3">
@@ -332,7 +330,7 @@ const Index = () => {
                 ))}
               </div>
 
-              <Card>
+              <Card className="bg-white">
                 <CardHeader>
                   <CardTitle>Как получить карту?</CardTitle>
                   <CardDescription className="space-y-3 pt-4">
