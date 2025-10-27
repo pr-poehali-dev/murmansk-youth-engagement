@@ -57,7 +57,8 @@ const Index = () => {
               <Icon name="MapPin" className="text-white" size={24} />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Карта51</h1>
+              <h1 className="text-xl font-bold text-slate-900">Единая карта жителя
+Мурманской области</h1>
               <p className="text-xs text-gray-600">Молодежный портал</p>
             </div>
           </div>
