@@ -11,7 +11,7 @@ const Index = () => {
     { icon: "Gift", title: "Льготы", description: "Региональные программы поддержки молодежи", color: "bg-blue-50", count: "12+" },
     { icon: "Palette", title: "Культура", description: "Мероприятия, выставки, концерты", color: "bg-purple-50", count: "48+" },
     { icon: "Trophy", title: "Спорт", description: "Секции, тренировки, соревнования", color: "bg-green-50", count: "35+" },
-    { icon: "CreditCard", title: "Карта", description: "Единая карта жителя Мурманской области", color: "bg-orange-50", count: "1" }
+    { icon: "GraduationCap", title: "Образование", description: "Программы, курсы и возможности для обучения", color: "bg-orange-50", count: "24+" }
   ];
 
   const льготы = [
@@ -35,11 +35,12 @@ const Index = () => {
     { title: "Йога и фитнес", description: "Групповые занятия", location: "Фитнес-центр Энергия", age: "16+" }
   ];
 
-  const cardFeatures = [
-    { icon: "Shield", title: "Безопасность", description: "Защита персональных данных" },
-    { icon: "Zap", title: "Быстрота", description: "Моментальный доступ к услугам" },
-    { icon: "Star", title: "Бонусы", description: "Накопительная программа лояльности" },
-    { icon: "Globe", title: "Доступность", description: "Работает по всей области" }
+  const образование = [
+    { title: "Курсы программирования", description: "Изучение Python, JavaScript и веб-разработки", duration: "6 месяцев", format: "Онлайн/Офлайн" },
+    { title: "Английский язык", description: "Интенсивные курсы разговорного английского", duration: "3 месяца", format: "Группы" },
+    { title: "Бизнес-школа для молодежи", description: "Основы предпринимательства и стартапы", duration: "4 месяца", format: "Вебинары" },
+    { title: "Дизайн и креатив", description: "Графический дизайн, UI/UX, видеомонтаж", duration: "5 месяцев", format: "Практика" },
+    { title: "Цифровой маркетинг", description: "SMM, таргетированная реклама, аналитика", duration: "2 месяца", format: "Онлайн" }
   ];
 
   const новости = [
@@ -267,6 +268,43 @@ const Index = () => {
                               <Icon name="Users" size={14} />
                               {секция.age}
                             </div>
+                          </div>
+                        </div>
+                        <Button size="sm">Записаться</Button>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {activeSection === "образование" && (
+          <section className="container mx-auto px-4 pb-16 animate-fade-in">
+            <div className="bg-gray-50 rounded-2xl p-8">
+              <div className="grid gap-4">
+                {образование.map((курс, index) => (
+                  <Card key={index} className="bg-white hover:shadow-md transition-shadow">
+                    <CardHeader>
+                      <div className="flex items-start justify-between">
+                        <div className="space-y-3 flex-1">
+                          <div className="flex items-center gap-3">
+                            <div className="bg-orange-100 rounded-full p-2">
+                              <Icon name="GraduationCap" className="text-orange-600" size={20} />
+                            </div>
+                            <CardTitle className="text-xl">{курс.title}</CardTitle>
+                          </div>
+                          <CardDescription className="text-base">{курс.description}</CardDescription>
+                          <div className="flex gap-4 pt-2">
+                            <Badge variant="outline" className="flex items-center gap-1">
+                              <Icon name="Clock" size={12} />
+                              {курс.duration}
+                            </Badge>
+                            <Badge variant="outline" className="flex items-center gap-1">
+                              <Icon name="Monitor" size={12} />
+                              {курс.format}
+                            </Badge>
                           </div>
                         </div>
                         <Button size="sm">Записаться</Button>
